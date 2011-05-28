@@ -138,6 +138,9 @@
 			895F4F2C1391594B003F5BB6 /* PBXTextBookmark */ = 895F4F2C1391594B003F5BB6 /* PBXTextBookmark */;
 			895F4F2D1391594B003F5BB6 /* PBXTextBookmark */ = 895F4F2D1391594B003F5BB6 /* PBXTextBookmark */;
 			895F4F2E1391594B003F5BB6 /* PBXTextBookmark */ = 895F4F2E1391594B003F5BB6 /* PBXTextBookmark */;
+			895F4F2F13915997003F5BB6 /* PBXTextBookmark */ = 895F4F2F13915997003F5BB6 /* PBXTextBookmark */;
+			895F4F3013915997003F5BB6 /* PBXTextBookmark */ = 895F4F3013915997003F5BB6 /* PBXTextBookmark */;
+			895F4F3113915997003F5BB6 /* PBXTextBookmark */ = 895F4F3113915997003F5BB6 /* PBXTextBookmark */;
 			8970673F13907735004388A8 = 8970673F13907735004388A8 /* PBXTextBookmark */;
 			89706745139077A8004388A8 = 89706745139077A8004388A8 /* PBXTextBookmark */;
 			8970677613912657004388A8 = 8970677613912657004388A8 /* PBXTextBookmark */;
@@ -262,9 +265,9 @@
 	};
 	895F4EBE139146B2003F5BB6 /* pkmFaceModeler.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {800, 1944}}";
-			sepNavSelRange = "{168, 0}";
-			sepNavVisRange = "{0, 761}";
+			sepNavIntBoundsRect = "{{0, 0}, {800, 1959}}";
+			sepNavSelRange = "{85, 0}";
+			sepNavVisRange = "{0, 772}";
 			sepNavWindowFrame = "{{518, 5}, {827, 873}}";
 		};
 	};
@@ -304,7 +307,7 @@
 		fRef = 895F4EBE139146B2003F5BB6 /* pkmFaceModeler.h */;
 		name = "pkmFaceModeler.h: 26";
 		rLen = 0;
-		rLoc = 423;
+		rLoc = 434;
 		rType = 0;
 		vrLen = 524;
 		vrLoc = 224;
@@ -314,7 +317,7 @@
 		fRef = 895F4EBE139146B2003F5BB6 /* pkmFaceModeler.h */;
 		name = "pkmFaceModeler.h: 26";
 		rLen = 0;
-		rLoc = 423;
+		rLoc = 434;
 		rType = 0;
 		vrLen = 524;
 		vrLoc = 224;
@@ -324,7 +327,7 @@
 		fRef = 895F4EBE139146B2003F5BB6 /* pkmFaceModeler.h */;
 		name = "pkmFaceModeler.h: 28";
 		rLen = 0;
-		rLoc = 486;
+		rLoc = 497;
 		rType = 0;
 		vrLen = 346;
 		vrLoc = 332;
@@ -334,7 +337,7 @@
 		fRef = 895F4EBE139146B2003F5BB6 /* pkmFaceModeler.h */;
 		name = "pkmFaceModeler.h: 28";
 		rLen = 0;
-		rLoc = 486;
+		rLoc = 497;
 		rType = 0;
 		vrLen = 521;
 		vrLoc = 264;
@@ -344,7 +347,7 @@
 		fRef = 895F4EBE139146B2003F5BB6 /* pkmFaceModeler.h */;
 		name = "pkmFaceModeler.h: 28";
 		rLen = 0;
-		rLoc = 486;
+		rLoc = 497;
 		rType = 0;
 		vrLen = 799;
 		vrLoc = 224;
@@ -354,7 +357,7 @@
 		fRef = 895F4EBE139146B2003F5BB6 /* pkmFaceModeler.h */;
 		name = "pkmFaceModeler.h: 28";
 		rLen = 0;
-		rLoc = 486;
+		rLoc = 497;
 		rType = 0;
 		vrLen = 337;
 		vrLoc = 332;
@@ -364,7 +367,7 @@
 		fRef = 895F4EBE139146B2003F5BB6 /* pkmFaceModeler.h */;
 		name = "pkmFaceModeler.h: 28";
 		rLen = 0;
-		rLoc = 477;
+		rLoc = 488;
 		rType = 0;
 		vrLen = 686;
 		vrLoc = 0;
@@ -374,7 +377,7 @@
 		fRef = 895F4EBE139146B2003F5BB6 /* pkmFaceModeler.h */;
 		name = "pkmFaceModeler.h: 28";
 		rLen = 0;
-		rLoc = 477;
+		rLoc = 488;
 		rType = 0;
 		vrLen = 755;
 		vrLoc = 224;
@@ -414,7 +417,7 @@
 		fRef = 895F4EBE139146B2003F5BB6 /* pkmFaceModeler.h */;
 		name = "pkmFaceModeler.h: 28";
 		rLen = 0;
-		rLoc = 486;
+		rLoc = 497;
 		rType = 0;
 		vrLen = 346;
 		vrLoc = 332;
@@ -444,7 +447,7 @@
 		fRef = 895F4EBE139146B2003F5BB6 /* pkmFaceModeler.h */;
 		name = "pkmFaceModeler.h: 28";
 		rLen = 0;
-		rLoc = 477;
+		rLoc = 488;
 		rType = 0;
 		vrLen = 828;
 		vrLoc = 204;
@@ -454,7 +457,7 @@
 		fRef = 895F4EBE139146B2003F5BB6 /* pkmFaceModeler.h */;
 		name = "pkmFaceModeler.h: 28";
 		rLen = 0;
-		rLoc = 477;
+		rLoc = 488;
 		rType = 0;
 		vrLen = 828;
 		vrLoc = 204;
@@ -474,7 +477,7 @@
 		fRef = 895F4EBE139146B2003F5BB6 /* pkmFaceModeler.h */;
 		name = "pkmFaceModeler.h: 28";
 		rLen = 0;
-		rLoc = 477;
+		rLoc = 488;
 		rType = 0;
 		vrLen = 367;
 		vrLoc = 284;
@@ -484,7 +487,7 @@
 		fRef = 895F4EBE139146B2003F5BB6 /* pkmFaceModeler.h */;
 		name = "pkmFaceModeler.h: 28";
 		rLen = 0;
-		rLoc = 477;
+		rLoc = 488;
 		rType = 0;
 		vrLen = 955;
 		vrLoc = 678;
@@ -494,7 +497,7 @@
 		fRef = 895F4EBE139146B2003F5BB6 /* pkmFaceModeler.h */;
 		name = "pkmFaceModeler.h: 28";
 		rLen = 0;
-		rLoc = 477;
+		rLoc = 488;
 		rType = 0;
 		vrLen = 255;
 		vrLoc = 654;
@@ -522,7 +525,7 @@
 		fRef = 895F4EBE139146B2003F5BB6 /* pkmFaceModeler.h */;
 		name = "pkmFaceModeler.h: 28";
 		rLen = 0;
-		rLoc = 477;
+		rLoc = 488;
 		rType = 0;
 		vrLen = 937;
 		vrLoc = 332;
@@ -532,7 +535,7 @@
 		fRef = 895F4EBE139146B2003F5BB6 /* pkmFaceModeler.h */;
 		name = "pkmFaceModeler.h: 28";
 		rLen = 0;
-		rLoc = 477;
+		rLoc = 488;
 		rType = 0;
 		vrLen = 730;
 		vrLoc = 332;
@@ -542,7 +545,7 @@
 		fRef = 895F4EBE139146B2003F5BB6 /* pkmFaceModeler.h */;
 		name = "pkmFaceModeler.h: 94";
 		rLen = 0;
-		rLoc = 1926;
+		rLoc = 1937;
 		rType = 0;
 		vrLen = 838;
 		vrLoc = 1728;
@@ -562,7 +565,7 @@
 		fRef = 895F4EBE139146B2003F5BB6 /* pkmFaceModeler.h */;
 		name = "pkmFaceModeler.h: 28";
 		rLen = 0;
-		rLoc = 477;
+		rLoc = 488;
 		rType = 0;
 		vrLen = 730;
 		vrLoc = 332;
@@ -572,7 +575,7 @@
 		fRef = 895F4EBE139146B2003F5BB6 /* pkmFaceModeler.h */;
 		name = "pkmFaceModeler.h: 28";
 		rLen = 0;
-		rLoc = 477;
+		rLoc = 488;
 		rType = 0;
 		vrLen = 730;
 		vrLoc = 332;
@@ -582,7 +585,7 @@
 		fRef = 895F4EBE139146B2003F5BB6 /* pkmFaceModeler.h */;
 		name = "pkmFaceModeler.h: 94";
 		rLen = 0;
-		rLoc = 1926;
+		rLoc = 1937;
 		rType = 0;
 		vrLen = 838;
 		vrLoc = 1728;
@@ -602,7 +605,7 @@
 		fRef = 895F4EBE139146B2003F5BB6 /* pkmFaceModeler.h */;
 		name = "pkmFaceModeler.h: 28";
 		rLen = 0;
-		rLoc = 477;
+		rLoc = 488;
 		rType = 0;
 		vrLen = 730;
 		vrLoc = 332;
@@ -660,7 +663,7 @@
 		fRef = 895F4EBE139146B2003F5BB6 /* pkmFaceModeler.h */;
 		name = "pkmFaceModeler.h: 94";
 		rLen = 0;
-		rLoc = 1926;
+		rLoc = 1937;
 		rType = 0;
 		vrLen = 838;
 		vrLoc = 1728;
@@ -700,7 +703,7 @@
 		fRef = 895F4EBE139146B2003F5BB6 /* pkmFaceModeler.h */;
 		name = "pkmFaceModeler.h: 8";
 		rLen = 0;
-		rLoc = 168;
+		rLoc = 179;
 		rType = 0;
 		vrLen = 761;
 		vrLoc = 0;
@@ -763,6 +766,36 @@
 		rLoc = 134;
 		rType = 0;
 		vrLen = 840;
+		vrLoc = 0;
+	};
+	895F4F2F13915997003F5BB6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 895F4E7613913C7D003F5BB6 /* pkmFaceTracker.h */;
+		name = "pkmFaceTracker.h: 4";
+		rLen = 0;
+		rLoc = 134;
+		rType = 0;
+		vrLen = 840;
+		vrLoc = 0;
+	};
+	895F4F3013915997003F5BB6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 895F4EBE139146B2003F5BB6 /* pkmFaceModeler.h */;
+		name = "pkmFaceModeler.h: 8";
+		rLen = 0;
+		rLoc = 179;
+		rType = 0;
+		vrLen = 761;
+		vrLoc = 0;
+	};
+	895F4F3113915997003F5BB6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 895F4EBE139146B2003F5BB6 /* pkmFaceModeler.h */;
+		name = "pkmFaceModeler.h: 3";
+		rLen = 0;
+		rLoc = 85;
+		rType = 0;
+		vrLen = 772;
 		vrLoc = 0;
 	};
 	89706599138FC5FA004388A8 /* xcode */ = {

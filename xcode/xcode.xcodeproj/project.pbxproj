@@ -103,6 +103,7 @@
 		895F4EB413914686003F5BB6 /* Tracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tracker.h; sourceTree = "<group>"; };
 		895F4EBE139146B2003F5BB6 /* pkmFaceModeler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pkmFaceModeler.h; sourceTree = "<group>"; };
 		895F4EBF139146B2003F5BB6 /* pkmFaceModeler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = pkmFaceModeler.cpp; sourceTree = "<group>"; };
+		895F4F32139159A1003F5BB6 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README; path = ../README; sourceTree = SOURCE_ROOT; };
 		897066F313902583004388A8 /* libopencv_video.2.2.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_video.2.2.0.dylib; path = /usr/local/lib/libopencv_video.2.2.0.dylib; sourceTree = "<absolute>"; };
 		897066F413902583004388A8 /* libopencv_ts.2.2.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_ts.2.2.0.dylib; path = /usr/local/lib/libopencv_ts.2.2.0.dylib; sourceTree = "<absolute>"; };
 		897066F513902583004388A8 /* libopencv_objdetect.2.2.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_objdetect.2.2.0.dylib; path = /usr/local/lib/libopencv_objdetect.2.2.0.dylib; sourceTree = "<absolute>"; };
@@ -146,6 +147,7 @@
 		08FB7794FE84155DC02AAC07 /* xcode */ = {
 			isa = PBXGroup;
 			children = (
+				895F4F32139159A1003F5BB6 /* README */,
 				895F4E31139127D1003F5BB6 /* src */,
 				897066F313902583004388A8 /* libopencv_video.2.2.0.dylib */,
 				897066F413902583004388A8 /* libopencv_ts.2.2.0.dylib */,

@@ -1,6 +1,6 @@
 /*
  
- Builds on top of aam-library for building an active apperance model.
+ Builds on top of GreatYao's aam-library for building an active apperance model.
  
  by Parag K Mital
  Copyright Parag K Mital 2011, All rights reserved.

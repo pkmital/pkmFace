@@ -1,0 +1,4 @@
+Builds on top of Jason Mora Saragih's FaceTracker code, as well as GreatYao's aam-library for creating an active apperance model with relative ease.
+
+Please see Jason's original copyright/readme in /src/facetracker/COPYRIGHT and /src/facetracker/README
+
