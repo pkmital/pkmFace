@@ -36,17 +36,17 @@ public:
 		
 		// tracking parameters 
 		wSize1.resize(1);
-		wSize1[0]		= 7;
 		wSize2.resize(3);
-		wSize2[0]		= 11; 
-		wSize2[1]		= 9; 
-		wSize2[2]		= 7;
+		wSize1[0]		= 5;		// 7
+		wSize2[0]		= 7;		// 11
+		wSize2[1]		= 5;		// 9
+		wSize2[2]		= 3;		// 7
 		
-		nIter			= 5; 
-		clamp			= 3;
-		fTol			= 0.01; 
+		nIter			= 50;		// 5
+		clamp			= 3;		// 3
+		fTol			= 0.99;		// 0.01
 		
-		fpd				= -1;
+		fpd				= -1;		// -1
 		bFCheck			= false;
 		bFailed			= true;
 		
@@ -69,7 +69,7 @@ public:
 								scale * frame.rows));
 		
 		// flip horizontal
-		cv::flip(im, im, 1); 
+		// cv::flip(im, im, 1); 
 		
 		// go to grayscale
 		cv::cvtColor(im, gray, CV_BGR2GRAY);
