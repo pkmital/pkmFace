@@ -1,10 +1,9 @@
 /*
- *  app.cpp
- *  xcode
- *
- *  Created by Mr. Magoo on 5/28/11.
- *  Copyright 2011 __MyCompanyName__. All rights reserved.
- *
+
+ by Parag K Mital
+ Copyright Parag K Mital 2011, All rights reserved.
+ http://pkmital.com 
+ 
  */
 
 #include "app.h"

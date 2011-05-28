@@ -1,10 +1,11 @@
 /*
- *  pkmFaceModeler.h
- *  xcode
- *
- *  Created by Mr. Magoo on 5/28/11.
- *  Copyright 2011 __MyCompanyName__. All rights reserved.
- *
+ 
+ Builds on top of aam-library for building an active apperance model.
+ 
+ by Parag K Mital
+ Copyright Parag K Mital 2011, All rights reserved.
+ http://pkmital.com
+ 
  */
 
 #pragma once

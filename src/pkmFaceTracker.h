@@ -1,9 +1,10 @@
 /*
  
- Wraps Jason Mora Saragih's FaceTracker code in a cpp object
+ Wraps Jason Mora Saragih's FaceTracker code in a cpp object 
+ (see COPYRIGHT/README in /src/facetracker for Jason's project info)
 
  by Parag K Mital
- Copyright 2011, All rights reserved.
+ Copyright Parag K Mital 2011, All rights reserved.
  http://pkmital.com
  
 */
