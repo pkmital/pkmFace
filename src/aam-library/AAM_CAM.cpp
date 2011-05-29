@@ -419,6 +419,7 @@ void ontrackcam(int pos)
 	cvSet(image, cvScalar(128, 128, 128));
 	g_cam->DrawAppearance(image, aam_s, t);
 	
+	
 	cvNamedWindow("Combined Appearance Model",1);
 	cvShowImage("Combined Appearance Model", image);
 	
@@ -431,6 +432,7 @@ void ontrackcam(int pos)
 		cvDestroyWindow("Parameters");
 		cvDestroyWindow("Combined Appearance Model");
 	}
+	
 }
 
 //============================================================================

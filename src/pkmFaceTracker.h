@@ -38,12 +38,12 @@ public:
 		wSize1.resize(1);
 		wSize2.resize(3);
 		wSize1[0]		= 5;		// 7
-		wSize2[0]		= 7;		// 11
-		wSize2[1]		= 5;		// 9
-		wSize2[2]		= 3;		// 7
+		wSize2[0]		= 11;		// 11
+		wSize2[1]		= 9;		// 9
+		wSize2[2]		= 7;		// 7
 		
-		nIter			= 50;		// 5
-		clamp			= 3;		// 3
+		nIter			= 3;		// 5
+		clamp			= 5;		// 3
 		fTol			= 0.99;		// 0.01
 		
 		fpd				= -1;		// -1

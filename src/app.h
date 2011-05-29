@@ -12,7 +12,7 @@
 #include "pkmFaceTracker.h"
 #include "pkmFaceModeler.h"
 #include "pkmPoseCalibrator.h"
-
+#include "pkmPoseFilter.h"
 #include <opencv2/opencv.hpp>
 
 class app
@@ -28,6 +28,7 @@ private:
 	pkmFaceTracker			*faceTracker;
 	pkmFaceModeler			*faceModeler;
 	pkmPoseCalibrator		*poseCalibrator;
+	pkmPoseFilter			poseFilter;
 	
 	CvCapture				*camera; 
 	IplImage				*cameraImage;

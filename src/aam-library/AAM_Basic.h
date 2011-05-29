@@ -62,6 +62,30 @@ public:
 
 	// Init search parameters 
 	virtual void InitParams(const IplImage* image);
+	
+	virtual void PrintAppearanceVector()
+	{
+		printf("appearance vector: \n");
+		print_matrix(__c);
+	}
+	
+	virtual CvMat* GetAppearanceVector()
+	{
+		return __c;
+	}
+	
+	void print_matrix(CvMat *mat)
+	{
+		int i,j;
+		for (j = 0; j < mat->rows; j++) {
+			for (i = 0; i < mat->cols; i++) {
+				double thisVal = cvmGet(mat, j, i);
+				printf("%02.4lf ", thisVal);
+			}
+			printf("\n");
+		}
+		printf("\n\n");
+	}
 
 private:
 	// Calculates the pixel difference from a model instance and an image

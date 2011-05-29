@@ -483,9 +483,13 @@ void AAM_IC::Fit(const IplImage* image, 		AAM_Shape& Shape,
 	}
 
 	Shape.Mat2Point(__current_s);
+	
+	// update appearance vector
+	cvGEMM(__error_t, __texture.GetBases(), 1, NULL, 1, __lamda, CV_GEMM_B_T);
+	__texture.CalcTexture(__lamda, __warp_t);
 		
 	t = AAM_GetTime() - t;
-	printf("AAM IC Fitting time cost %.3f millisec\n", t);
+	//printf("AAM IC Fitting time cost %.3f millisec\n", t);
 	
 	cvReleaseImage(&Drawimg);
 }
@@ -548,8 +552,6 @@ void AAM_IC::Draw(IplImage* image, const AAM_Shape& Shape, int type)
 	else if(type == 1) AAM_Common::DrawTriangles(image, Shape, __paw.__tri);
 	else if(type == 2) 
 	{
-		cvGEMM(__error_t, __texture.GetBases(), 1, NULL, 1, __lamda, CV_GEMM_B_T);
-		__texture.CalcTexture(__lamda, __warp_t);
 		AAM_PAW paw;
 		double minV, maxV;
 		cvMinMaxLoc(__warp_t, &minV, &maxV);

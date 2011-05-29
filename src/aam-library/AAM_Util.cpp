@@ -430,7 +430,7 @@ void AAM_Pyramid::Fit(const IplImage* image,
 	// for each level in the image pyramid
 	for (int iLev = startlev; iLev >= 0; iLev--)
     {
-		printf("Level %d: ", iLev);
+		//printf("Level %d: ", iLev);
 
 		IplImage* fitimage = cvCreateImage(
 			cvSize((int)(w0/PyrScale), (int)(h0/PyrScale)), 
@@ -494,6 +494,12 @@ void AAM_Pyramid::WriteModel(const std::string& filename)
 
 	if(__model[0]->GetType() == TYPE_AAM_BASIC)
 		((AAM_Basic*)__model[0])->__cam.ShowVariation();
+}
+
+void AAM_Pyramid::ShowModes()
+{
+	if(__model[0]->GetType() == TYPE_AAM_BASIC)
+		((AAM_Basic*)__model[0])->__cam.ShowVariation();	
 }
 
 //============================================================================

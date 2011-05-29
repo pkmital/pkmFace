@@ -1,9 +1,35 @@
 /*
  *  pkmCalibrator.cpp
- *  xcode
- *
- *  Created by Mr. Magoo on 5/28/11.
- *  Copyright 2011 __MyCompanyName__. All rights reserved.
+
+ Ax = b
+ inv(A'*A)*A'*b = x;
+ 
+				A									x		  =					b
+ [calibrationPoints * numViews X numPoints] * [numPoints X 1] = [ calibrationPoints * numViews x 1 ]
+ 
+ [10 * 10 X 4] * [4 x 1] = [10 * 10 x 1]
+ 
+ [100 X 4] * [4 x 1] = [100 x 1]
+ 
+ A is the observed values of the equation
+ x is the set of factors of the equation I am solving for
+ b is the known rotations for each observation
+ 
+
+ equations:
+ 
+ A*e1 + B*e2 + C*e3 + D*e4 + E
+ A = [A B C D E]
+ x = [e1 e2 e3 e4 1]'
+ 
+ A*e1 + B*e2 + C*e3 + D*e1*e2 + E*e1*e3 + F*e2*e3 + G*e1*e2*e3 + H
+ A = [A B C D E F G H]  
+ x = [e1 e2 e3 e1*e2 e1*e3 e2*e3 e1*e2*e3 1]'
+ 
+ A*e1 + B*e2 + C*e3 + D*e4 + E*e1*e2 + F*e1*e3 + G*e1*e4 + H*e2*e3 + I*e2*e4 + J*e3*e4 + K*e1*e2*e3*e4 + L
+ A = [A B C D E F G H I J K L] 
+ x = [e1 e2 e3 e4 e1*e2 e1*e3 e1*e4 e2*e3 e2*e4 e3*e4 e1*e2*e3*e4 1]'
+ 
  *
  */
 
@@ -11,11 +37,12 @@
 
 pkmPoseCalibrator::pkmPoseCalibrator()
 {
-	numCalibrationPoints	= 10;		// number of calibration points
-	numViews				= 2;		// observations for each calibration point
-	numPoints				= 4;		// number of eigen values to train on
+	numCalibrationPoints	= 10;				// number of calibration points
+	numViews				= 10;				// observations for each calibration point
+	numPoints				= 5;				// number of eigen values to train on
+	numFactors				= numPoints + 1;
 	
-	eigenValues = Mat(numViews * numCalibrationPoints, numPoints, CV_64FC1);
+	eigenValues = Mat(numViews * numCalibrationPoints, numFactors, CV_64FC1);
 	
 	// keep an index of the current view for each calibration point
 	for (int i = 0; i < numCalibrationPoints; i++) {
@@ -36,22 +63,22 @@ pkmPoseCalibrator::pkmPoseCalibrator()
 	for(int i = 0; i < numViews; i++)
 	{
 		p_x.push_back(0.5);
-		p_y.push_back(0.5);
+		p_y.push_back(-0.5);
 	}
 	for(int i = 0; i < numViews; i++)
 	{
 		p_x.push_back(-1.0);
-		p_y.push_back(1.0);
+		p_y.push_back(-1.0);
 	}
 	for(int i = 0; i < numViews; i++)
 	{
 		p_x.push_back(0.0);
-		p_y.push_back(1.0);
+		p_y.push_back(-1.0);
 	}
 	for(int i = 0; i < numViews; i++)
 	{
 		p_x.push_back(1.0);
-		p_y.push_back(1.0);
+		p_y.push_back(-1.0);
 	}
 	for(int i = 0; i < numViews; i++)
 	{
@@ -71,17 +98,17 @@ pkmPoseCalibrator::pkmPoseCalibrator()
 	for(int i = 0; i < numViews; i++)
 	{	
 		p_x.push_back(-1.0);
-		p_y.push_back(-1.0);
+		p_y.push_back(1.0);
 	}
 	for(int i = 0; i < numViews; i++)
 	{
 		p_x.push_back(0.0);
-		p_y.push_back(-1.0);
+		p_y.push_back(1.0);
 	}
 	for(int i = 0; i < numViews; i++)
 	{
 		p_x.push_back(1.0);
-		p_y.push_back(-1.0);
+		p_y.push_back(1.0);
 	}
 	
 	poseX = cv::Mat(p_x).clone();
@@ -127,9 +154,9 @@ void pkmPoseCalibrator::addExample(int calibrationPoint, Mat &values)
 void pkmPoseCalibrator::getPose(Mat &values, Mat &pose_x, Mat &pose_y)
 {
 	if (bBuiltModel) {
-		Mat px = values.colRange(0, 4) * poseXInv;
+		Mat px = values.colRange(0, numPoints) * poseXInv;
 		px.copyTo(pose_x);
-		Mat py = values.colRange(0, 4) * poseYInv;
+		Mat py = values.colRange(0, numPoints) * poseYInv;
 		py.copyTo(pose_y);
 		printMatrix(px, "pose_x");
 		printMatrix(py, "pose_y");
@@ -150,10 +177,13 @@ bool pkmPoseCalibrator::modelPose()
 	if (isReadyForTraining()) {
 		printf("Modeling pose...\n");
 		
+		//solve(eigenValues, poseX, poseXInv, CV_LU);
+		//solve(eigenValues, poseX, poseYInv, CV_LU);
+		
 		printMatrix(eigenValues, "eigenValues");
 		Mat ete = eigenValues.t() * eigenValues;
 		printMatrix(ete, "ete");
-		Mat etei = ete.inv();
+		Mat etei = ete.inv(DECOMP_CHOLESKY);
 		printMatrix(etei, "etei");
 		Mat eteit =  etei * eigenValues.t();
 		printMatrix(eteit, "eteit");
@@ -163,8 +193,8 @@ bool pkmPoseCalibrator::modelPose()
 		Mat epy = eteit * poseY;
 		epy.copyTo(poseYInv);
 		
-		printMatrix(epx, "poseXInv");
-		printMatrix(epy, "poseYInv");
+		printMatrix(poseXInv, "poseXInv");
+		printMatrix(poseYInv, "poseYInv");
 		bBuiltModel = true;
 		return true;
 	}

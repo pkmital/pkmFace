@@ -67,6 +67,9 @@ public:
 	// Get Mean Shape of model
 	virtual const AAM_Shape GetMeanShape()const = 0;
 	virtual const AAM_Shape GetReferenceShape()const = 0;
+	
+	virtual void PrintAppearanceVector() = 0;
+	virtual CvMat* GetAppearanceVector() = 0;
 };
 
 class AAM_EXPORTS AAM_Pyramid
@@ -97,12 +100,30 @@ public:
 
 	// Read aam from file
 	void ReadModel(const std::string& filename);
+	
+	void ShowModes();
 
 	// Draw the image according search result
 	void Draw(IplImage* image, const AAM_Shape& Shape, int type);
 
 	// Get Mean Shape of model
 	const AAM_Shape GetMeanShape()const;
+	
+	void PrintAppearanceVector()
+	{
+		if(__model.size() > 0)
+		{
+			__model[0]->PrintAppearanceVector();
+		}
+	}
+	
+	CvMat* GetAppearanceVector()
+	{
+		if(__model.size() > 0)
+		{
+			return __model[0]->GetAppearanceVector();
+		}
+	}
 	
 private:
 	std::vector<AAM*>	__model;

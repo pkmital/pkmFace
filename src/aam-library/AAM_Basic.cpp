@@ -331,7 +331,7 @@ void AAM_Basic::Fit(const IplImage* image, AAM_Shape& Shape,
 	__cam.CalcShape(__s, __current_c_q);
 	Shape.Mat2Point(__s);
 	t = AAM_GetTime() - t;
-	printf("AAM-Basic Fitting time cost: %.3f millisec\n", t);
+	//printf("AAM-Basic Fitting time cost: %.3f millisec\n", t);
 }
 
 

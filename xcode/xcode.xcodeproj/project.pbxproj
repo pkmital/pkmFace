@@ -29,6 +29,8 @@
 		895F4EBB13914686003F5BB6 /* PDM.cc in Sources */ = {isa = PBXBuildFile; fileRef = 895F4EB013914686003F5BB6 /* PDM.cc */; };
 		895F4EBC13914686003F5BB6 /* Tracker.cc in Sources */ = {isa = PBXBuildFile; fileRef = 895F4EB313914686003F5BB6 /* Tracker.cc */; };
 		895F4EC0139146B2003F5BB6 /* pkmFaceModeler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 895F4EBF139146B2003F5BB6 /* pkmFaceModeler.cpp */; };
+		895F4F3713915AF0003F5BB6 /* pkmPoseCalibrator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 895F4F3613915AF0003F5BB6 /* pkmPoseCalibrator.cpp */; };
+		895F529F1391D58A003F5BB6 /* pkmPoseFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 895F529E1391D58A003F5BB6 /* pkmPoseFilter.cpp */; };
 		8970670013902583004388A8 /* libopencv_video.2.2.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 897066F313902583004388A8 /* libopencv_video.2.2.0.dylib */; };
 		8970670113902583004388A8 /* libopencv_ts.2.2.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 897066F413902583004388A8 /* libopencv_ts.2.2.0.dylib */; };
 		8970670213902583004388A8 /* libopencv_objdetect.2.2.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 897066F513902583004388A8 /* libopencv_objdetect.2.2.0.dylib */; };
@@ -104,6 +106,10 @@
 		895F4EBE139146B2003F5BB6 /* pkmFaceModeler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pkmFaceModeler.h; sourceTree = "<group>"; };
 		895F4EBF139146B2003F5BB6 /* pkmFaceModeler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = pkmFaceModeler.cpp; sourceTree = "<group>"; };
 		895F4F32139159A1003F5BB6 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README; path = ../README; sourceTree = SOURCE_ROOT; };
+		895F4F3513915AF0003F5BB6 /* pkmPoseCalibrator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pkmPoseCalibrator.h; sourceTree = "<group>"; };
+		895F4F3613915AF0003F5BB6 /* pkmPoseCalibrator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = pkmPoseCalibrator.cpp; sourceTree = "<group>"; };
+		895F529D1391D58A003F5BB6 /* pkmPoseFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pkmPoseFilter.h; sourceTree = "<group>"; };
+		895F529E1391D58A003F5BB6 /* pkmPoseFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = pkmPoseFilter.cpp; sourceTree = "<group>"; };
 		897066F313902583004388A8 /* libopencv_video.2.2.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_video.2.2.0.dylib; path = /usr/local/lib/libopencv_video.2.2.0.dylib; sourceTree = "<absolute>"; };
 		897066F413902583004388A8 /* libopencv_ts.2.2.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_ts.2.2.0.dylib; path = /usr/local/lib/libopencv_ts.2.2.0.dylib; sourceTree = "<absolute>"; };
 		897066F513902583004388A8 /* libopencv_objdetect.2.2.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_objdetect.2.2.0.dylib; path = /usr/local/lib/libopencv_objdetect.2.2.0.dylib; sourceTree = "<absolute>"; };
@@ -233,6 +239,10 @@
 				895F4E7713913C7D003F5BB6 /* pkmFaceTracker.cpp */,
 				895F4EBE139146B2003F5BB6 /* pkmFaceModeler.h */,
 				895F4EBF139146B2003F5BB6 /* pkmFaceModeler.cpp */,
+				895F4F3513915AF0003F5BB6 /* pkmPoseCalibrator.h */,
+				895F4F3613915AF0003F5BB6 /* pkmPoseCalibrator.cpp */,
+				895F529D1391D58A003F5BB6 /* pkmPoseFilter.h */,
+				895F529E1391D58A003F5BB6 /* pkmPoseFilter.cpp */,
 			);
 			name = app;
 			sourceTree = "<group>";
@@ -341,6 +351,8 @@
 				895F4EBB13914686003F5BB6 /* PDM.cc in Sources */,
 				895F4EBC13914686003F5BB6 /* Tracker.cc in Sources */,
 				895F4EC0139146B2003F5BB6 /* pkmFaceModeler.cpp in Sources */,
+				895F4F3713915AF0003F5BB6 /* pkmPoseCalibrator.cpp in Sources */,
+				895F529F1391D58A003F5BB6 /* pkmPoseFilter.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

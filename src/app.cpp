@@ -58,9 +58,6 @@ void app::update()
 	
 	if(bPoseModelBuilt) {
 		faceModeler->update(frame);
-		Mat av = faceModeler->getAppearanceVector();
-		Mat pose_x, pose_y;
-		poseCalibrator->getPose(av, pose_x, pose_y);
 	}
 	else if(bAppearanceModelBuilt) {
 		faceModeler->update(frame);
@@ -80,9 +77,66 @@ void app::draw()
 {
 	if (bPoseModelBuilt) {
 		faceModeler->draw(frame);
+		Mat av = faceModeler->getAppearanceVector();
+		Mat pose_x, pose_y;
+		poseCalibrator->getPose(av, pose_x, pose_y);
+		int w2 = width/2;
+		int h2 = height/2;
+		double x = pose_x.at<double>(0) * w2 + w2;
+		double y = pose_y.at<double>(0) * h2 + h2;
+		poseFilter.addExample(x,y);
+		x = poseFilter.getX();
+		y = poseFilter.getY();
+		circle(frame, Point2d(x,y), 10, Scalar(255,0,255), 5, CV_FILLED);
+		
+		char buf[256];
+		sprintf(buf, "[\'t\']: Start training AAM with calibration points\n");
+		putText(frame,
+				buf,
+				Point(10,60),
+				CV_FONT_HERSHEY_PLAIN,
+				1.0,
+				CV_RGB(255,255,255));
+		sprintf(buf, "[\'0\' - \'9\']: Add training example for calibration point\n");
+		putText(frame,
+				buf,
+				Point(10,80),
+				CV_FONT_HERSHEY_PLAIN,
+				1.0,
+				CV_RGB(255,255,255));
+		sprintf(buf, "[\'d\']: Change drawing mode");
+		putText(frame,
+				buf,
+				Point(10,100),
+				CV_FONT_HERSHEY_PLAIN,
+				1.0,
+				CV_RGB(255,255,255));
 	}
 	else if(bAppearanceModelBuilt) {
 		faceModeler->draw(frame);
+		
+		char buf[256];
+		sprintf(buf, "[\'t\']: Start training AAM with calibration points\n");
+		putText(frame,
+				buf,
+				Point(10,60),
+				CV_FONT_HERSHEY_PLAIN,
+				1.0,
+				CV_RGB(255,255,255));
+		sprintf(buf, "[\'0\' - \'9\']: Add training example for calibration point\n");
+		putText(frame,
+				buf,
+				Point(10,80),
+				CV_FONT_HERSHEY_PLAIN,
+				1.0,
+				CV_RGB(255,255,255));
+		sprintf(buf, "[\'d\']: Change drawing mode");
+		putText(frame,
+				buf,
+				Point(10,100),
+				CV_FONT_HERSHEY_PLAIN,
+				1.0,
+				CV_RGB(255,255,255));
 	}
 	else {
 		faceTracker->drawShapeModel(frame);
@@ -92,8 +146,31 @@ void app::draw()
 		putText(frame,
 				buf,
 				Point(10,20),
-				CV_FONT_HERSHEY_SIMPLEX,
-				0.5,
+				CV_FONT_HERSHEY_PLAIN,
+				1.0,
+				CV_RGB(255,255,255));
+		
+		
+		sprintf(buf, "[\'l\']: Load an existing AAM Model");
+		putText(frame,
+				buf,
+				Point(10,60),
+				CV_FONT_HERSHEY_PLAIN,
+				1.0,
+				CV_RGB(255,255,255));
+		sprintf(buf, "[\'r\']: Re-initialize the face tracker");
+		putText(frame,
+				buf,
+				Point(10,80),
+				CV_FONT_HERSHEY_PLAIN,
+				1.0,
+				CV_RGB(255,255,255));
+		sprintf(buf, "[\' \']: Train an AAM model");
+		putText(frame,
+				buf,
+				Point(10,100),
+				CV_FONT_HERSHEY_PLAIN,
+				1.0,
 				CV_RGB(255,255,255));
 		
 	}
@@ -104,7 +181,7 @@ void app::draw()
 void app::keyPressed(int c)
 {
 	// reset the shape model
-	if(c == 'd')
+	if(c == 'r')
 		faceTracker->reset();
 	// start training the AAM
 	else if(c == ' ')
@@ -130,4 +207,12 @@ void app::keyPressed(int c)
 	{
 		bPoseModelBuilt = poseCalibrator->modelPose();
 	}
+	else if(c == 's')
+	{
+		faceModeler->showModes();
+	} 
+	else if(c == 'd')
+	{
+		faceModeler->changeDrawingMode();
+	} 
 }

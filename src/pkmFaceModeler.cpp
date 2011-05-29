@@ -16,6 +16,8 @@ pkmFaceModeler::pkmFaceModeler(int n)
 	currentExample			= 0;		// current example to train
 	numExamples				= n;		// number of examples before model is built
 	
+	drawMode				= 1;
+	
 	bModelLoaded			= false;
 	bDraw					= false;
 }
@@ -64,7 +66,7 @@ bool pkmFaceModeler::addExample(Mat &img, Mat &shape)
 // we've learned enough examples, now train an AAM, storing to "model.aam"
 bool pkmFaceModeler::buildModel()
 {
-	int type = TYPE_AAM_IC;
+	int type = TYPE_AAM_IC;//TYPE_AAM_BASIC;//
 	int level = 1;
 	int color = 3;
 	aamModel.Build(pointFiles, imageFiles, type, level, color);
@@ -121,7 +123,7 @@ void pkmFaceModeler::draw(Mat &frame)
 	{
 		// draw the appearance model in the image
 		IplImage image = frame;
-		aamModel.Draw(&image, aamShape, 2);
+		aamModel.Draw(&image, aamShape, drawMode);
 	}
 }
 

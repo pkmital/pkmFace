@@ -47,6 +47,16 @@ public:
 	// return the matrix of appearance values
 	Mat getAppearanceVector();
 	
+	void showModes()
+	{
+		aamModel.ShowModes();
+	}
+	
+	void changeDrawingMode()
+	{
+		drawMode = (drawMode + 1) % 3;
+	}
+	
 	
 private:
 	Mat							currentAppearanceVector;
@@ -56,6 +66,8 @@ private:
 	
 	int							numExamples,
 								currentExample;
+		
+	int							drawMode;
 				  
 	AAM_Pyramid					aamModel;
 	AAM_Shape					aamShape;

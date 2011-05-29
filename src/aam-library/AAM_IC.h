@@ -85,6 +85,30 @@ private:
 	// Compute the Hessian matrix using modified steepest descent image.
 	void CalcHessian(CvMat* H, const CvMat* SD);
 
+	virtual void PrintAppearanceVector()
+	{
+		printf("appearance vector: \n");
+		print_matrix(__lamda);
+	}
+	
+	virtual CvMat* GetAppearanceVector()
+	{
+		return __warp_t;//__lamda;
+	}
+	
+	void print_matrix(CvMat *mat)
+	{
+		int i,j;
+		for (j = 0; j < mat->rows; j++) {
+			for (i = 0; i < mat->cols; i++) {
+				double thisVal = cvmGet(mat, j, i);
+				printf("%02.4lf ", thisVal);
+			}
+			printf("\n");
+		}
+		printf("\n\n");
+	}
+	
 private:
 
 	//these variables are used for train PAW
