@@ -82,8 +82,8 @@ void app::draw()
 		poseCalibrator->getPose(av, pose_x, pose_y);
 		int w2 = width/2;
 		int h2 = height/2;
-		double x = pose_x.at<double>(0) * w2 + w2;
-		double y = pose_y.at<double>(0) * h2 + h2;
+		double x = pose_x.at<double>(0) / 2.0 * w2 + w2;
+		double y = pose_y.at<double>(0) / 2.0 * h2 + h2;
 		poseFilter.addExample(x,y);
 		x = poseFilter.getX();
 		y = poseFilter.getY();

@@ -1,7 +1,8 @@
 /*
  *  pkmPoseFilter.h
- *  xcode
- *
+
+	Simple mean filter which could be extended to incorporate other filters
+ 
  *  Created by Mr. Magoo on 5/29/11.
  *  Copyright 2011 __MyCompanyName__. All rights reserved.
  *
@@ -10,6 +11,7 @@
 #pragma once
 
 #include <vector.h>
+
 
 class pkmPoseFilter
 {
