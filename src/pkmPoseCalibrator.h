@@ -45,7 +45,10 @@ private:
 	
 	int						numCalibrationPoints, 
 							numViews, 
-							numPoints;
+							numPoints,	
+							numFactors;
+	
+	int						decompType;
 	
 	bool					bBuiltModel;
 };

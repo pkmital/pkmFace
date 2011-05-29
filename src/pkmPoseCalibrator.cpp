@@ -22,11 +22,15 @@
  A = [A B C D E]
  x = [e1 e2 e3 e4 1]'
  
- A*e1 + B*e2 + C*e3 + D*e1*e2 + E*e1*e3 + F*e2*e3 + G*e1*e2*e3 + H
+ A*e1 + B*e2 + C*e3 + 
+ D*e1*e2 + E*e1*e3 + F*e2*e3 + 
+ G*e1*e2*e3 + H
  A = [A B C D E F G H]  
  x = [e1 e2 e3 e1*e2 e1*e3 e2*e3 e1*e2*e3 1]'
  
- A*e1 + B*e2 + C*e3 + D*e4 + E*e1*e2 + F*e1*e3 + G*e1*e4 + H*e2*e3 + I*e2*e4 + J*e3*e4 + K*e1*e2*e3*e4 + L
+ A*e1 + B*e2 + C*e3 + D*e4 + 
+ E*e1*e2 + F*e1*e3 + G*e1*e4 + H*e2*e3 + I*e2*e4 + J*e3*e4 + 
+ K*e1*e2*e3*e4 + L
  A = [A B C D E F G H I J K L] 
  x = [e1 e2 e3 e4 e1*e2 e1*e3 e1*e4 e2*e3 e2*e4 e3*e4 e1*e2*e3*e4 1]'
  
@@ -41,6 +45,7 @@ pkmPoseCalibrator::pkmPoseCalibrator()
 	numViews				= 10;				// observations for each calibration point
 	numPoints				= 5;				// number of eigen values to train on
 	numFactors				= numPoints + 1;
+	decompType				= DECOMP_SVD;		// how should we do the inverse?
 	
 	eigenValues = Mat(numViews * numCalibrationPoints, numFactors, CV_64FC1);
 	
@@ -177,16 +182,10 @@ bool pkmPoseCalibrator::modelPose()
 	if (isReadyForTraining()) {
 		printf("Modeling pose...\n");
 		
-		//solve(eigenValues, poseX, poseXInv, CV_LU);
-		//solve(eigenValues, poseX, poseYInv, CV_LU);
-		
 		printMatrix(eigenValues, "eigenValues");
 		Mat ete = eigenValues.t() * eigenValues;
-		printMatrix(ete, "ete");
-		Mat etei = ete.inv(DECOMP_CHOLESKY);
-		printMatrix(etei, "etei");
+		Mat etei = ete.inv(decompType);
 		Mat eteit =  etei * eigenValues.t();
-		printMatrix(eteit, "eteit");
 		
 		Mat epx = eteit * poseX;
 		epx.copyTo(poseXInv);
